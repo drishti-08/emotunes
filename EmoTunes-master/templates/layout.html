@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>EmoTunes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmoTunes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="{{ url_for('static', filename='faces.png') }}" type="image/png">
+    
+    <style>
+        .titleNav{
+            font-size: x-large;
+            align-items: center;
+            color: whitesmoke;
+            font-weight: 700;
+        }
+
+        .btn-lg{
+	        background-color: #1DB954; 
+            color: #ffffffff; 
+            padding-left: 10px; 
+            padding: 10px 25px;
+            font-size: 20px;
+        }
+
+        p{
+            font-size: 14px;
+        }
+
+        .popover-body{
+            background-color: #1a232d;
+            color: aliceblue;
+            border-radius: 8px;
+        } 
+
+        .popover{
+            box-shadow: 4px 4px 10px #293746;
+            border-radius: 8px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body style="background-color: #13171c">
+    <nav class="navbar py-3 d-block " style="background-color: #1a232d;">
+        
+        <div class="titleNav d-flex flex-row justify-content-between align-self-center">
+            <div class="d-flex flex-row ml-4">
+                <span><img src="{{ url_for('static', filename='faces.png') }}"  width="50" height="50"  class="d-inline-block align-top mr-2" alt=""></span>
+                <span class="align-self-center" style="color: aliceblue; letter-spacing: 1px;">EmoTunes</span>
+            </div>
+            
+            <div class="d-inline-block align-self-center">
+                <button type="button" class="btn popover-body" data-container="body" data-toggle="popover" data-placement="bottom" 
+                data-html="true" style="background-color: transparent; color: azure; font-weight: 600; letter-spacing: 0.5px; font-size: 18px;"
+                data-content="<div class='custom-popover-content' style='border-color: #1DB954;'>
+                    <h6>EmoTunes User Guide</h6>
+
+                    <p><b>1. Grant Permissions:</b>
+                        Grant camera and Spotify permissions for accurate emotion detection and playlist creation.</p>
+
+                    <p><b>2. Emotion Scanning:</b>
+                        Click on the 'Scan Emotion' button for facial emotion detection.
+                        Ensure good lighting and frame your face in the camera.
+                        The app analyzes facial expressions to detect your mood.</p>
+
+                    <p><b>3. Create Playlist:</b>
+                        EmoTunes curates a mood-based playlist with suggested tracks and artists.</p>
+
+                    <p><b>4. Connect to Spotify:</b>
+                        Log in to your Spotify account, if prompted, to sync your emotion-based playlist.</p>
+
+                    <p><b>5. Enjoy Your Emotion-Based Playlist:</b>
+                        Open your Spotify app or web player in another window.
+                        Navigate to your playlist section, and find the newly created playlist labelled with your detected emotion.</p>
+                </div>">Instructions
+                  </button>
+            </div>
+        </div>
+    </nav>
+
+ {% block body %}{% endblock %}
+ 
+</body>
+</html>
+
